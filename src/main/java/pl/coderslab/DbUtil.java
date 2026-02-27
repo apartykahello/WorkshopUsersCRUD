@@ -17,6 +17,7 @@ public class DbUtil {
     }
 
     private static DataSource getInstance() {
+        System.out.println(dataSource);
         if (dataSource == null) {
             try {
                 Context initContext = new InitialContext();
