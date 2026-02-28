@@ -9,9 +9,7 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">UsersCRUD</h1>
 
-    <div class="d-sm-flex container-fluid align-items-center justify-content-between mb-4">
-        <a href="/users/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"></i> Add new user</a>
-    </div>
+
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">User list</h6>
@@ -26,26 +24,24 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Action</th>
+
                     </tr>
                     </thead>
 
                     <tbody>
-                    <c:forEach items="${users}" var="user">
                         <tr>
                             <td>${user.id}</td>
                             <td>${user.userName}</td>
                             <td>${user.email}</td>
-                            <td>
-                                <a class="btn btn-danger" href="/user/delete?id=${user.id}">Delete</a>
-                                <a class="btn btn-primary" href="/user/show?id=${user.id}">Show</a>
-                                <a class="btn btn-warning" href="/user/edit?id=${user.id}">Edit</a>
-                            </td>
+
                         </tr>
-                    </c:forEach>
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <div class="d-sm-flex container-fluid align-items-center justify-content-between mb-4">
+            <a href="/user/list" class="btn btn-primary"> Continue</a>
         </div>
 
 

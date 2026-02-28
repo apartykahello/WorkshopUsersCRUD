@@ -42,4 +42,16 @@ public class DbUtil {
         }
         return 0;
     }
+
+    private static final String EXIST_QUERY = "SELECT * FROM users m WHERE m.id = ?;";
+
+    public static boolean rowExists(Connection conn, int id) throws SQLException {
+        try (PreparedStatement statement = conn.prepareStatement(EXIST_QUERY)) {
+            statement.setInt(1, id);
+            if (!statement.executeQuery().next()) return false;
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
